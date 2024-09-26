@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,11 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="style.css" type="text/css" rel="stylesheet">
 </head>
+
 <body onload="loadCurrentDateAPOD()">
     <video id="video-background" autoplay muted loop>
-        <source src="" type="video/mp4"></source>
+        <source src="" type="video/mp4">
+        </source>
     </video>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
@@ -26,29 +29,62 @@
 
     <main class="container my-5">
         <section class="text-center mb-5">
-            <article class="glass text-light p-3 mb-4">The APOD (Astronomy Picture of the Day) is a NASA service that offers a daily image or snapshot of our universe along
-            with a brief explanation given by an expert astronomer. Every day since it began on June 16, 1995, a new image has
-            appeared on it. While APOD strives to post a new image every day, there have occasionally been reprints or cases in
-            which an image from a previous date may have been used. Additionally, the picture for the current day might not yet be
-            accessible depending on when you request the API.</article>
-        </section>
+            <article class="glass text-light p-3 mb-4">The APOD (Astronomy Picture of the Day) is a NASA service that
+                offers a daily image or snapshot of our universe along
+                with a brief explanation given by an expert astronomer. Every day since it began on June 16, 1995, a new
+                image has
+                appeared on it. While APOD strives to post a new image every day, there have occasionally been reprints
+                or cases in
+                which an image from a previous date may have been used. Additionally, the picture for the current day
+                might not yet be
+                accessible depending on when you request the API.</article>
 
-        <div class="row">
-            <div class="col-md-5">
-                <button class="btn">
-                    Discover Random APOD
-                </button>
-            </div>
-            <div class="col-md-5">
-                <div class="input-group date">
-                    <input type="date" min="1995-06-16" id="datePicker">
+
+            <div class="row">
+
+                <div class="col-md-5">
+                    <button class="btn text-light">
+                        Discover Random APOD
+                    </button>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="input-group date">
+
+                        <input type="date" mixn="1995-06-16" id="datePicker">
+
+                        <div class="input-group-append">
+                            <button class="btn btn-dark btn-block" onclick="loadSelectedDateAPOD()">Selected
+                                Date</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
+
+
+        </section>
+
+        <!-- apod card -->
+        <section class="card mx-auto my-auto text-white" style="max-width:1080px;">
+            <h5 class="card-header text-center" id="apodTitle"></h5>
+            <div id="apodImage"></div>
+            <div class="card-body">
+                <h6 id="apodDate" class="text-left mb-2 text-white">
+                
+                </h6>
+                <p id="apodDescription" class="card-text"></p>
+            </div>
+
+        </section>
+
+
     </main>
 
 
 
 
+
 </body>
+
 </html>
